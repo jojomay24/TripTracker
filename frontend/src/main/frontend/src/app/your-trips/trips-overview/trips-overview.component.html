@@ -1,0 +1,14 @@
+<div style="border: 1px black solid">
+  <h1>{{title}}</h1>
+
+  <div>
+    <ul>
+      <li *ngFor="let trip of trips"
+          (click)="onSelect(trip)">
+        <span> {{trip.name}} </span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+

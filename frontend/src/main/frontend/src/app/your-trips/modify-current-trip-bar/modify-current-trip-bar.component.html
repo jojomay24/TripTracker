@@ -1,0 +1,13 @@
+<div style="border: 1px black solid">
+  <div>
+    <button (click)="getAndSaveCoordinates()">Aktuelle Position hinzufügen</button>
+    <button (click)="stopTrip()">Trip beenden</button>
+    <span *ngIf="lastSavedWayPoint">
+        Successfully saved position (
+        lat: {{ lastSavedWayPoint?.coordinates?.latitude}}
+        long: {{ lastSavedWayPoint?.coordinates?.longitude}}
+        , saved at: {{ lastSavedWayPoint?.creationTimeStamp | date:"d.MM.y,HH:mm:ss" }} )
+      <!--, saved at:  {{ lastSavedWayPoint?.creationTimeStamp  }} ) -->
+        </span>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div>
+  <h3>{{trip?.name}}</h3>
+  {{trip?.description}}
+  <app-google-maps-view [wayPoints]="wayPoints"></app-google-maps-view>
+  <h3>Coordinates:</h3>
+  <ul>
+    <div *ngFor='let wp of wayPoints'>
+      <li>
+        {{wp.creationTimeStamp}} (lat: {{wp.coordinates.latitude}}, long: {{wp.coordinates.longitude}}),
+      </li>
+    </div>
+  </ul>
+
+  <button (click)='gotoTripsOverview()'>Back</button>
+</div>
+<br/>

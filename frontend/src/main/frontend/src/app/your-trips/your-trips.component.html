@@ -1,0 +1,15 @@
+<p>
+  your-trips works!
+</p>
+
+<app-create-new-trip *ngIf="!currentTripPublisherService.currentTrip"
+                     (newTrip)="onNewTrip($event);">
+</app-create-new-trip>
+
+<app-modify-current-trip-bar
+        *ngIf="currentTripPublisherService.currentTrip"
+        [userInfo]="userInfo"
+        [trip]="currentTripPublisherService.currentTrip"
+        (onStopTrip)="onStopTrip($event);"></app-modify-current-trip-bar>
+
+<app-trips-overview [trips]="trips"></app-trips-overview>

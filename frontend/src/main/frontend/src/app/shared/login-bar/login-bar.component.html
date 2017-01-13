@@ -1,0 +1,30 @@
+<div style='border: 1px solid black;height: 3em;'>
+
+  <div *ngIf='!isLoggedIn' style='display:table;'>
+    <form>
+      <div style='display:table-cell'>
+        <label>Username</label>
+        <input [value]='userName'
+               (input)='userName=$event.target.value' type='text' placeholder='Username' />
+      </div>
+      <div style='display:table-cell'>
+        <label>Password</label>
+        <input name='password' type='PASSWORD' />
+      </div>
+      <div style='display:table-cell'>
+        <button (click)='doLogin()'>login</button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf='isLoggedIn'>
+    <div style='display:table-cell'>
+      <label>Username</label>
+      <span>{{userName}}</span>
+    </div>
+    <div style='display:table-cell'>
+      <button (click)='doLogout()'>logout</button>
+    </div>
+  </div>
+
+</div>

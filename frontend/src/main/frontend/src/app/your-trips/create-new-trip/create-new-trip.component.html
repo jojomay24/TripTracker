@@ -1,0 +1,31 @@
+<div style="border: 1px black solid">
+  <button (click)="onNewTrip()">New Trip ...</button>
+
+  <div *ngIf="showNewTripForm">
+    <form
+            (submit)="onSubmit()"
+            #tripForm="ngForm">
+      <label for="name">Name of your trip</label>
+      <input type="text" required
+             [(ngModel)]="trip.name"
+             name="name"
+             placeholder="Name of the trip"
+             #name="ngModel"
+      >
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        Name is required
+      </div>
+
+      <br/>
+      <label for="description">Description of your trip</label>
+      <textarea type="text"
+                [(ngModel)]="trip.description"
+                name="description"
+                placeholder="Some words what's your trip about ..."></textarea>
+
+      <button type="submit" [disabled]="!tripForm.form.valid">Start new Trip</button>
+      <button (click)="onCancelNewTrip()" type="button" class="btn btn-default">Cancel</button>
+    </form>
+  </div>
+
+</div>

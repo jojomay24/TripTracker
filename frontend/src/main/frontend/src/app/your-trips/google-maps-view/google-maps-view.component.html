@@ -1,0 +1,12 @@
+<div>
+
+  <div *ngIf="this.wayPoints">
+    <sebm-google-map [latitude]="lat" [longitude]="lng">
+      <sebm-google-map-marker
+              *ngFor="let wp of this.wayPoints"
+              [latitude]=wp.coordinates.latitude
+              [longitude]=wp.coordinates.longitude >
+      </sebm-google-map-marker>
+    </sebm-google-map>
+  </div>
+</div>
